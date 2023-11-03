@@ -6,27 +6,34 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://rawgit.com/summerstyle/jsonTreeViewer/master/libs/jsonTree/jsonTree.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
+    <script src="https://rawgit.com/summerstyle/jsonTreeViewer/master/libs/jsonTree/jsonTree.js"></script>
+    <script src="script.js"></script>
     <title>JSONViewer</title>
 </head>
 <body class="text-neutral-200">
 <div id="container" class="dark:bg-zinc-900 flex flex-col h-screen">
-    <div class="h-fit mb-4 border-b border-gray-900 dark:border-teal-700">
+    <div class="h-fit mb-4 border-b">
         <ul class="flex flex-wrap">
             <li class="ml-2">
-                <button class="p-4 border-b-2 rounded-t-lg hover:border-teal-600 dark:hover:text-teal-600">JSON Tree
+                <button id="json-tree-btn" class="p-4 border-2 rounded-t-lg hover:border-teal-400 dark:hover:text-teal-400">JSON Tree
                 </button>
             </li>
             <li class="ml-2">
-                <button class="p-4 border-b-2 rounded-t-lg hover:border-teal-600 dark:hover:text-teal-600">JSON String
+                <button id="json-str-btn" class="p-4 border-2 rounded-t-lg hover:border-teal-400 dark:hover:text-teal-400">JSON String
                 </button>
             </li>
         </ul>
     </div>
     <div class="pl-3 pr-3 pb-3 flex-1">
         <textarea
-                class="resize-none focus:outline-none w-full h-full p-4 rounded-lg focus:ring-teal-600 focus:border-teal-500 dark:bg-zinc-800 dark:border-teal-600 dark:placeholder-gray-400 dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                id="json-text-area"
+                class="overflow-scroll resize-none focus:outline-none w-full h-full p-4 rounded-lg focus:ring-teal-600 focus:border-teal-500 dark:bg-zinc-800 dark:border-teal-600 dark:placeholder-gray-400 dark:focus:ring-teal-500 dark:focus:border-teal-500"
                 placeholder="Paste your JSON here"></textarea>
+        <div id="wrapper" class="focus:outline-none w-full h-full p-4 rounded-lg focus:ring-teal-600 focus:border-teal-500 dark:bg-zinc-800 dark:border-teal-600 dark:placeholder-gray-400 dark:focus:ring-teal-500 dark:focus:border-teal-500">
+        </div>
     </div>
 </div>
 </body>
