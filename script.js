@@ -20,10 +20,11 @@ $(function() {
                 $("#json-tree-btn").addClass("dark:text-teal-700 border-teal-700");
                 $("#json-text-area").hide();
                 $("#wrapper").show();
-                if(document.getElementsByClassName("jsontree_label").length === 0) {
-                    var wrapper = document.getElementById("wrapper");
-                    var tree = jsonTree.create(JSON.parse($("#json-text-area").val()), wrapper);
+                if(document.getElementsByClassName("jsontree_tree").length > 0) {
+                    document.getElementsByClassName("jsontree_tree")[0].remove();
                 }
+                var wrapper = document.getElementById("wrapper");
+                var tree = jsonTree.create(JSON.parse($("#json-text-area").val()), wrapper);
             } else {
                     alert("Invalid JSON!");
             }
