@@ -64,4 +64,9 @@ $(function() {
         // NOTE: add check for firefox
         $("#json-text-area").val(navigator.clipboard.readText());
     });
+
+    $("#clear_btn").click(function() {
+        $("#json-text-area").val("");
+    });
+
 });
