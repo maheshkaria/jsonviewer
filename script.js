@@ -40,6 +40,28 @@ $(function() {
         $("#json-text-area").show();
     });
 
+    $("#format_btn").click(function() {
+        let inpJSON = $("#json-text-area").val()
+        console.log(inpJSON);
+        if (isJsonString(inpJSON)) {
+            var formatChar = "";
+            if (!inpJSON.includes("\t")) {
+                formatChar = "\t";
+            }
+            $("#json-text-area").val(JSON.stringify(JSON.parse(inpJSON), null, formatChar));
+        } else {
+            alert("Fail to format due to Invalid JSON!");
+        }
+    });
 
+    $("#copy_btn").click(function() {
+        let inpJSON = $("#json-text-area").val()
+        navigator.clipboard.writeText(inpJSON);
+        alert("copied");
+    });
 
+    $("#paste_btn").click(function() {
+        // NOTE: add check for firefox
+        $("#json-text-area").val(navigator.clipboard.readText());
+    });
 });
