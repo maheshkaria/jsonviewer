@@ -31,11 +31,13 @@
     </div>
 
     <div class="p-3 flex-1 h-screen flex flex-col" >
-        <div class="dark:bg-zinc-900 pb-3">
+        <div id="menu_bar" class="dark:bg-zinc-900 pb-3">
             <button id="copy_btn" class="pl-3 pr-5 dark:text-gray dark:hover:text-teal-400">Copy</button>
             <button id="paste_btn" class="pr-5 dark:text-gray dark:hover:text-teal-400">Paste</button>
             <button id="format_btn" class="pr-5 dark:text-gray dark:hover:text-teal-400">Format</button>
             <button id="clear_btn" class="pr-5 dark:text-gray dark:hover:text-teal-400">Clear</button>
+            <button id="expand_btn" class="pr-5 dark:text-gray dark:hover:text-teal-400" hidden="hidden">Expand</button>
+            <button id="collapse_btn" class="pr-5 dark:text-gray dark:hover:text-teal-400" hidden="hidden">Collapse</button>
         </div>
         <textarea
                 id="json-text-area"

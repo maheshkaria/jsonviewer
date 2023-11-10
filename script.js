@@ -19,6 +19,7 @@ $(function() {
                 $("#json-str-btn").removeClass("dark:text-teal-700 border-teal-700");
                 $("#json-tree-btn").addClass("dark:text-teal-700 border-teal-700");
                 $("#json-text-area").hide();
+                $("#menu_bar").hide();
                 $("#wrapper").show();
                 if(document.getElementsByClassName("jsontree_tree").length > 0) {
                     document.getElementsByClassName("jsontree_tree")[0].remove();
@@ -38,6 +39,7 @@ $(function() {
         $("#json-tree-btn").removeClass("dark:text-teal-700 border-teal-700");
         $("#wrapper").hide();
         $("#json-text-area").show();
+        $("#menu_bar").show();
     });
 
     $("#format_btn").click(function() {
