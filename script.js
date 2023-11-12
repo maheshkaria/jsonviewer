@@ -8,6 +8,7 @@ function isJsonString(str) {
 }
 
 $(function() {
+    var tree = null;
     console.log("booyah!");
     $("#json-text-area").val("");
 
@@ -32,7 +33,7 @@ $(function() {
                     document.getElementsByClassName("jsontree_tree")[0].remove();
                 }
                 var wrapper = document.getElementById("wrapper");
-                var tree = jsonTree.create(JSON.parse($("#json-text-area").val()), wrapper);
+                tree = jsonTree.create(JSON.parse($("#json-text-area").val()), wrapper);
             } else {
                     alert("Invalid JSON!");
             }
@@ -68,6 +69,20 @@ $(function() {
         } else {
             alert("Fail to format due to Invalid JSON!");
         }
+    });
+
+    $("#expand_btn").click(function() {
+        if (tree) {
+            tree.expand();
+
+        }
+    });
+
+    $("#collapse_btn").click(function() {
+        if (tree) {
+                tree.collapse();
+
+            }
     });
 
     $("#copy_btn").click(function() {
