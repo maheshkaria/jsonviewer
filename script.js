@@ -35,10 +35,14 @@ $(function() {
                 var wrapper = document.getElementById("wrapper");
                 tree = jsonTree.create(JSON.parse($("#json-text-area").val()), wrapper);
             } else {
-                    alert("Invalid JSON!");
+                    $("#alert_msg").text("Invalid JSON!");
+                    $("#alert_box").attr("hidden", false);
+                    setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
             }
         } else {
-            alert("JSON can not be empty!");
+            $("#alert_msg").text("JSON can not be empty!");
+            $("#alert_box").attr("hidden", false);
+            setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
         }
     });
 
@@ -74,14 +78,12 @@ $(function() {
     $("#expand_btn").click(function() {
         if (tree) {
             tree.expand();
-
         }
     });
 
     $("#collapse_btn").click(function() {
         if (tree) {
                 tree.collapse();
-
             }
     });
 
