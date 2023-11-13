@@ -25,12 +25,7 @@ $(function() {
             if (isJsonString($("#json-text-area").val())) {
                 $("#json-str-btn").removeClass("dark:text-teal-700 border-teal-700");
                 $("#json-tree-btn").addClass("dark:text-teal-700 border-teal-700");
-                $("#json-text-area").hide();
-
-                $("#copy_btn").attr("hidden", true);
-                $("#paste_btn").attr("hidden", true);
-                $("#format_btn").attr("hidden", true);
-                $("#clear_btn").attr("hidden", true);
+                $(".text-area").hide();
 
                 $(".wrapper-class").show();
                 if(document.getElementsByClassName("jsontree_tree").length > 0) {
@@ -49,14 +44,8 @@ $(function() {
     $("#json-str-btn").click(function() {
         $("#json-str-btn").addClass("dark:text-teal-700 border-teal-700");
         $("#json-tree-btn").removeClass("dark:text-teal-700 border-teal-700");
-        $("#json-text-area").show();
-
+        $(".text-area").show();
         $(".wrapper-class").hide();
-
-        $("#copy_btn").attr("hidden", false);
-        $("#paste_btn").attr("hidden", false);
-        $("#format_btn").attr("hidden", false);
-        $("#clear_btn").attr("hidden", false);
     });
 
     $("#format_btn").click(function() {
