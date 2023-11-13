@@ -7,6 +7,12 @@ function isJsonString(str) {
     return true;
 }
 
+function displayAlert(alertMessage) {
+    $("#alert_msg").text(alertMessage);
+    $("#alert_box").attr("hidden", false);
+    setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
+}
+
 $(function() {
     var tree = null;
     console.log("booyah!");
@@ -35,14 +41,10 @@ $(function() {
                 var wrapper = document.getElementById("wrapper");
                 tree = jsonTree.create(JSON.parse($("#json-text-area").val()), wrapper);
             } else {
-                    $("#alert_msg").text("Invalid JSON!");
-                    $("#alert_box").attr("hidden", false);
-                    setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
+                    displayAlert("Invalid JSON!");
             }
         } else {
-            $("#alert_msg").text("JSON can not be empty!");
-            $("#alert_box").attr("hidden", false);
-            setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
+            displayAlert("JSON can not be empty!");
         }
     });
 
@@ -71,9 +73,7 @@ $(function() {
             }
             $("#json-text-area").val(JSON.stringify(JSON.parse(inpJSON), null, formatChar));
         } else {
-            $("#alert_msg").text("Fail to format due to Invalid JSON!");
-            $("#alert_box").attr("hidden", false);
-            setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
+            displayAlert("Fail to format due to Invalid JSON!");
         }
     });
 
@@ -92,9 +92,7 @@ $(function() {
     $("#copy_btn").click(function() {
         let inpJSON = $("#json-text-area").val()
         navigator.clipboard.writeText(inpJSON);
-        $("#alert_msg").text("Copied!");
-        $("#alert_box").attr("hidden", false);
-        setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
+        displayAlert("Copied!");
     });
 
     $("#paste_btn").click(function() {
