@@ -32,9 +32,7 @@ $(function() {
                 $("#format_btn").attr("hidden", true);
                 $("#clear_btn").attr("hidden", true);
 
-                $("#wrapper").show();
-                $("#expand_btn").attr("hidden", false);
-                $("#collapse_btn").attr("hidden", false);
+                $(".wrapper-class").show();
                 if(document.getElementsByClassName("jsontree_tree").length > 0) {
                     document.getElementsByClassName("jsontree_tree")[0].remove();
                 }
@@ -51,11 +49,9 @@ $(function() {
     $("#json-str-btn").click(function() {
         $("#json-str-btn").addClass("dark:text-teal-700 border-teal-700");
         $("#json-tree-btn").removeClass("dark:text-teal-700 border-teal-700");
-        $("#wrapper").hide();
         $("#json-text-area").show();
 
-        $("#expand_btn").attr("hidden", true);
-        $("#collapse_btn").attr("hidden", true);
+        $(".wrapper-class").hide();
 
         $("#copy_btn").attr("hidden", false);
         $("#paste_btn").attr("hidden", false);
