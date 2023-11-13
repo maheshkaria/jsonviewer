@@ -71,7 +71,9 @@ $(function() {
             }
             $("#json-text-area").val(JSON.stringify(JSON.parse(inpJSON), null, formatChar));
         } else {
-            alert("Fail to format due to Invalid JSON!");
+            $("#alert_msg").text("Fail to format due to Invalid JSON!");
+            $("#alert_box").attr("hidden", false);
+            setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
         }
     });
 
@@ -90,7 +92,9 @@ $(function() {
     $("#copy_btn").click(function() {
         let inpJSON = $("#json-text-area").val()
         navigator.clipboard.writeText(inpJSON);
-        alert("copied");
+        $("#alert_msg").text("Copied!");
+        $("#alert_box").attr("hidden", false);
+        setTimeout(function() {$("#alert_box").attr("hidden", true);}, 3000);
     });
 
     $("#paste_btn").click(function() {
