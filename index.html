@@ -29,7 +29,6 @@
             </li>
         </ul>
     </div>
-
     <div class="p-3 flex-1 h-screen flex flex-col" >
         <div id="menu_bar" class="dark:bg-zinc-900 pb-3">
             <button id="expand_btn" class="pl-3 pr-5 dark:text-gray dark:hover:text-teal-400 wrapper-class" hidden="hidden">Expand</button>
@@ -38,14 +37,10 @@
             <button id="paste_btn" class="pr-5 dark:text-gray dark:hover:text-teal-400 text-area">Paste</button>
             <button id="format_btn" class="pr-5 dark:text-gray dark:hover:text-teal-400 text-area">Format</button>
             <button id="clear_btn" class="pr-5 dark:text-gray dark:hover:text-teal-400 text-area">Clear</button>
-
-            <!----- alert start ---->
-             <div id="alert_box" class="bg-zinc-700 border border-teal-500 text-white p-2 mt-2" hidden="hidden" role="alert">
+            <div id="alert_box" class="bg-zinc-700 border border-teal-500 text-white p-2 mt-2" hidden="hidden" role="alert">
                  <p class="font-bold text-teal-400">Alert!</p>
                  <p id="alert_msg" class="text-sm">Some additional text to explain said message.</p>
-             </div>
-            <!----- alert end ---->
-
+            </div>
         </div>
         <textarea
                 id="json-text-area"
