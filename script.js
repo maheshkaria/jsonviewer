@@ -15,7 +15,6 @@ function displayAlert(alertMessage) {
 
 $(function() {
     var tree = null;
-    console.log("booyah!");
     $("#json-text-area").val("");
 
     $("#json-str-btn").addClass("dark:text-teal-700 border-teal-700");
